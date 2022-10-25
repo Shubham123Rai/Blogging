@@ -16,6 +16,7 @@ class Auth extends BaseController
     public $userModel;
     public $email;
     public $session;
+    
     public function __construct()
     {
         helper(['url','form','date','Form']);
@@ -121,18 +122,18 @@ class Auth extends BaseController
 
                 if ($this->email->send()) 
                 {
-                    $this->session->setTempdata('success','Account created successfully. Please activate your account',3);
+                    $this->session->set('success','Account created successfully. Please activate your account',3);
                     return redirect()->to('/login');
                 }
                 else
                 {
-                    $this->session->setTempdata('error','Account created successfully. Sorry Unable to send activation link',3);
+                    $this->session->set('error','Account created successfully. Sorry Unable to send activation link',3);
                     return redirect()->to(current_url());
                 }
             }
             else 
             {
-                $this->session->setTempdata('error','Sorry unable to create an account, Try again',3);
+                $this->session->set('error','Sorry unable to create an account, Try again',3);
                 return redirect()->to(current_url());
             }
         }
@@ -277,14 +278,14 @@ class Auth extends BaseController
                     else                                                            //+1
                     {
                        
-                        $this->session->setFlashdata('error','Sorry! You entered wrong password');
+                        $this->session->set('error','Sorry! You entered wrong password');
                         return redirect()->to(current_url());
                     }
 
                 }else                                                               //+1
                 {
                     
-                    $this->session->setTempdata('error','Sorry! Email does not exist');
+                    $this->session->set('error','Sorry! Email does not exist');
                     return redirect()->to(current_url());
                 }
         }
@@ -298,7 +299,7 @@ class Auth extends BaseController
         if (session()->has('loggedUser')) 
         {
             session()->remove('loggedUser');
-            return redirect()->to('/login?access=out')->with('successMessage','You are successfully logged out');
+            return redirect()->to('/login?access=out')->with('success','You are successfully logged out');
         }
     }
 
@@ -382,24 +383,24 @@ class Auth extends BaseController
                             
                         if ($this->email->send())                                       //+5 (incl. 4 for nesting)
                         {
-                            $this->session->setFlashdata('success','Reset password link sent to your register email id. Please verify within 15mins',3);
+                            $this->session->set('success','Reset password link sent to your register email id. Please verify within 15mins',3);
                             return redirect()->to(current_url());
                         } 
                         else                                                            //+1
                         {
-                            $this->session->setFlashdata('error','Reset password link has been expired.',3);
+                            $this->session->set('error','Reset password link has been expired.',3);
                             return redirect()->to(current_url());
                         }
                     }
                     else                                                                //+1
                     {
-                        $this->session->setFlashdata('error','Sorry! Unable to update. try again',3);
+                        $this->session->set('error','Sorry! Unable to update. try again',3);
                         return redirect()->to(current_url());
                     }
                 }
                 else                                                                    //+1
                 {
-                    $this->session->setFlashdata('error','Email id does not exists',3);
+                    $this->session->set('error','Email id does not exists',3);
                     return redirect()->to(current_url());
                 }
 
@@ -446,12 +447,12 @@ class Auth extends BaseController
                             
                             if ($this->loginModel->updatePassword($token,$pwd))             //+6(incl .5 for nesting)
                             {
-                                $this->session->setTempdata('success','Password updated successfully');
+                                $this->session->set('success','Password updated successfully');
                                 return redirect()->to(base_url().'/login');
                             }
                             else                                                                //+1
                             {
-                                $this->session->setTempdata('error','Sorry! Unable to update password ,Try again');
+                                $this->session->set('error','Sorry! Unable to update password ,Try again');
                                 return redirect()->to(current_url());
                             }
                         }

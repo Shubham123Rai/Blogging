@@ -43,7 +43,7 @@ class User extends BaseController
             ];
 
         $userModel->update($id, $userdata);
-        return redirect()->to(base_url('userdash'))->with('status','Student Data Updated Successfully');
+        return redirect()->to(base_url('userdash'))->with('success','Student Data Updated Successfully');
     }
 
     public function user_profile()

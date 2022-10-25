@@ -17,21 +17,14 @@
         <div class="row">
             <div class="col-md-12">
 
-                <?php if (session()->get('deleteMessage')) : ?>
+                <?php if (session()->get('success')) : ?>
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <?= session()->get('deleteMessage') ?>
+                        <?= session()->get('success') ?>
                         <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
                     </div>
                 <?php endif; ?>
 
-                <?php if (session()->get('block')) : ?>
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <?= session()->get('block') ?>
-                        <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
-                    </div>
-                <?php endif; ?>
-
-                <?php if (session()->get('unblock')) : ?>
+                <?php if (session()->get('error')) : ?>
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         <?= session()->get('unblock') ?>
                         <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>

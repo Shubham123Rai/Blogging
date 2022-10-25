@@ -16,59 +16,20 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-        <?php if(session()->get('status')):?>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <?= session()->get('status')?>
-            <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
-        </div>
-        <?php endif; ?>
-
-        
-        
         <?php if(session()->get('success')):?>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <?= session()->get('success')?>
-            <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
-        </div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?= session()->get('success')?>
+                <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
+            </div>
         <?php endif; ?>
 
-        <?php if(session()->get('fail')):?>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <?= session()->get('fail')?>
-            <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
-        </div>
+                <!-- collect and print Tempdata for password verification-->    
+        <?php if(session()->get('error')):?>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <?= session()->get('error')?>
+                <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
+            </div>
         <?php endif; ?>
-
-        <?php if(session()->get('successMessage')):?>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <?= session()->get('successMessage')?>
-            <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
-        </div>
-    <?php endif; ?>
-
-            <!-- collect and print Tempdata for password verification-->    
-    <?php if(session()->getFlashdata('error')):?>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <?= session()->getFlashdata('error')?>
-            <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
-        </div>
-    <?php endif; ?>
-
-        <!-- collect and print Tempdata
-    <?php if(session()->getTempdata('error')):?> -->
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <?= session()->getTempdata('error')?>
-            <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
-        </div>
-    <?php endif; ?>
-
-        <!-- collect and print Tempdata -->
-        <?php if(session()->get('block')):?>
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <?= session()->get('block')?>
-            <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
-        </div>
-    <?php endif; ?>
 
             <div class="card">
             <div class="card-header">

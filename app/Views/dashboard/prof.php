@@ -10,9 +10,9 @@
     <body>
         <?= $this->section('content'); ?>
 
-        <?php if (session()->get('save')) : ?>
+        <?php if (session()->get('success')) : ?>
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <strong><?= session()->get('save') ?></strong>
+                    <strong><?= session()->get('success') ?></strong>
                     <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
                 </div>
             <?php endif ?>

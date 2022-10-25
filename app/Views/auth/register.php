@@ -30,16 +30,16 @@
         <?php endif ;?>
 
 <!-- collect and print flash data -->
-    <?php if($session->getTempdata('success')):?>
+    <?php if($session->get('success')):?>
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <?= $session->getTempdata('success')?>
+            <?= $session->get('success')?>
             <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
         </div>
     <?php endif; ?>
 
-    <?php if($session->getTempdata('error')):?>
+    <?php if($session->get('error')):?>
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <?= $session->getTempdata('error')?>
+            <?= $session->get('error')?>
             <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
         </div>
     <?php endif; ?>

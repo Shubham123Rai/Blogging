@@ -17,9 +17,9 @@
         <div class="row">
             <div class="col-md-12">
 
-                <?php if (session()->get('status')) : ?>
+                <?php if (session()->get('success')) : ?>
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong><?= session()->get('status') ?></strong>
+                        <strong><?= session()->get('success') ?></strong>
                         <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
                     </div>
                 <?php endif ?>

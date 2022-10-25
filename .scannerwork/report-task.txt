@@ -1,6 +1,6 @@
-projectKey=newblog
+projectKey=re-scan-blogging
 serverUrl=http://127.0.0.1:9000
 serverVersion=9.6.1.59531
-dashboardUrl=http://127.0.0.1:9000/dashboard?id=newblog
-ceTaskId=AYPF9nvUKJLqNm1ULSll
-ceTaskUrl=http://127.0.0.1:9000/api/ce/task?id=AYPF9nvUKJLqNm1ULSll
+dashboardUrl=http://127.0.0.1:9000/dashboard?id=re-scan-blogging
+ceTaskId=AYP0OzhPKmiaw_jjoniR
+ceTaskUrl=http://127.0.0.1:9000/api/ce/task?id=AYP0OzhPKmiaw_jjoniR

@@ -83,7 +83,7 @@ class Dashboard extends BaseController
         }
 
         $userModel->update($id, $data);
-        return redirect()->to(base_url('dash'))->with('status',' Data Updated Successfully');
+        return redirect()->to(base_url('dash'))->with('success',' Data Updated Successfully');
     }
 
     public function update_admin_image($id=null)
@@ -109,7 +109,7 @@ class Dashboard extends BaseController
             'profile_pic' => $imageName,
         ];
         $userModel->update($id, $data);
-        return redirect()->back()->with('save','Admin profile image updated successfully');
+        return redirect()->back()->with('success','Admin profile image updated successfully');
     }
 
     public function Block($id=null)
@@ -119,7 +119,7 @@ class Dashboard extends BaseController
             'status'=>'Inactive'
         ];
         $userModel->update($id,$data);
-        return redirect()->back()->with('block','Account has been blocked',3);
+        return redirect()->back()->with('success','Account has been blocked',3);
     }
 
     public function Unblock($id=null)
@@ -129,7 +129,7 @@ class Dashboard extends BaseController
             'status'=>'active'
         ];
         $userModel->update($id,$data);
-        return redirect()->back()->with('unblock','Account has been unblocked',3);
+        return redirect()->back()->with('error','Account has been unblocked',3);
     }
 
     public function Blockcomment($comment_id=null)
@@ -141,7 +141,7 @@ class Dashboard extends BaseController
         ];
         $commentModel->update($comment_id,$data);
         
-        return redirect()->to('/fetch_blog')->with('block','Account has been blocked',3);
+        return redirect()->to('/fetch_blog')->with('success','Comment has been blocked',3);
     }
 
     public function Unblockcomment($comment_id=null)
@@ -153,7 +153,7 @@ class Dashboard extends BaseController
         $commentModel->update($comment_id,$data);
                                       
 
-        return redirect()->to('/fetch_blog')->with('block','Comment has been unblocked',3);
+        return redirect()->to('/fetch_blog')->with('error','Comment has been unblocked',3);
     }
 
     public function create_blog()
@@ -329,7 +329,7 @@ class Dashboard extends BaseController
 
         $blogModel->update($id, $data);
     
-        return redirect()->to(base_url('/fetch_blog'))->with('status','Blog Data Updated Successfully');
+        return redirect()->to(base_url('/fetch_blog'))->with('success','Blog Data Updated Successfully');
     }
 
     public function show_blog($id=null)

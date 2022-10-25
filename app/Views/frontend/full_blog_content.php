@@ -18,27 +18,6 @@
 
       <div class="card mb-3" style="max-width: 800px;">
 
-        <?php if (session()->get('status')) : ?>
-          <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <?= session()->get('status') ?>
-            <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
-          </div>
-        <?php endif; ?>
-
-        <?php if (session()->get('status1')) : ?>
-          <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <?= session()->get('status1') ?>
-            <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
-          </div>
-        <?php endif; ?>
-
-        <?php if (session()->get('dstatus')) : ?>
-          <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <?= session()->get('dstatus') ?>
-            <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
-          </div>
-        <?php endif; ?>
-
         <?php if (session()->get('success')) : ?>
           <div class="alert alert-success alert-dismissible fade show" role="alert">
             <?= session()->get('success') ?>
@@ -49,20 +28,6 @@
         <?php if (session()->get('error')) : ?>
           <div class="alert alert-warning alert-dismissible fade show" role="alert">
             <?= session()->get('error') ?>
-            <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
-          </div>
-        <?php endif; ?>
-
-        <?php if (session()->get('welcome')) : ?>
-          <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <?= session()->get('welcome') ?>
-            <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
-          </div>
-        <?php endif; ?>
-
-        <?php if (session()->get('fail')) : ?>
-          <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <?= session()->get('fail') ?>
             <button type="button" class="btn-close float-right" data-bs-dismiss="alert" aria-label="Close">Close</button>
           </div>
         <?php endif; ?>

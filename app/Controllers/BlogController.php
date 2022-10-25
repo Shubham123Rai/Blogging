@@ -229,7 +229,7 @@ class BlogController extends BaseController
                 $blogModel->update($id,$var);
 
                 $ratingModel->where('blog_id',$id)->delete();
-                return redirect()->back()->with('status', 'You disliked this post', 3);
+                return redirect()->back()->with('error', 'You disliked this post', 3);
   
         } 
         else 
@@ -249,7 +249,7 @@ class BlogController extends BaseController
             ];
 
             $ratingModel->save($data);
-            return redirect()->back()->with('status', 'Like added successfully', 3);        
+            return redirect()->back()->with('success', 'Like added successfully', 3);        
         }
     }
 
@@ -299,7 +299,7 @@ class BlogController extends BaseController
         $commentModel->where([
             "comment_id" => $comment_id,
         ])->delete();
-        return redirect()->back()->with('deleteMessage', 'Comment has been deleted successfully', 3);
+        return redirect()->back()->with('error', 'Comment has been deleted successfully', 3);
     }
 
     public function showComment_outer($id = null)
@@ -311,8 +311,6 @@ class BlogController extends BaseController
             "post_id" => $id,
             'status'  => 'active',
         ])->findAll();
-
-        
 
         return view('frontend/showComments_outer', $data);
     }

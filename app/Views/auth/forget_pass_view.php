@@ -18,16 +18,16 @@
         <div class="col-md-8">
         <div class="card">
 
-        <?php if(session()->getFlashdata('success')):?>
+        <?php if(session()->get('success')):?>
                 <div class="alert alert-success" role="alert">
-                <strong><?= session()->getFlashdata('success')?></strong> 
+                <strong><?= session()->get('success')?></strong> 
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">Close</button>
             </div>
         <?php endif ?>
 
-        <?php if(session()->getFlashdata('error')):?>
+        <?php if(session()->get('error')):?>
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong><?= session()->getFlashdata('error')?></strong> 
+                <strong><?= session()->get('error')?></strong> 
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">Close</button>
             </div>
         <?php endif ?>
