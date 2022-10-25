@@ -261,9 +261,8 @@ class BlogController extends BaseController
         if (!empty($data)) 
         {
 
-        $userModel = new UserModel();
         $loggedUserID = session()->get('loggedUser');
-        $userInfo = $userModel->select('id,name')->find($loggedUserID);
+        $userInfo = $this->userModel->select('id,name')->find($loggedUserID);
 
             $commentModel = new CommentModel();
             $value = [

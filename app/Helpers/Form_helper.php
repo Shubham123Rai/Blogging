@@ -1,8 +1,11 @@
 <?php
     function display_error($validation,$field){
-        if ($validation->hasError($field)) {
+        if ($validation->hasError($field)) 
+        {
             return $validation->getError($field);
-        }else{
+        }
+        else
+        {
             return false;
         }
     }

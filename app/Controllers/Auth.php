@@ -263,9 +263,9 @@ class Auth extends BaseController
                         {
                             if($user['status']=='active')                           //+5(incl. 4 for nesting)
                             {
-                            $user_id=$user['id'];
-                            session()->set('loggedUser',$user_id);
-                            return redirect()->to('/home');
+                                $user_id=$user['id'];
+                                session()->set('loggedUser',$user_id);
+                                return redirect()->to('/home');
                             }
                             else                                                    //+1
                             {
